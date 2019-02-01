@@ -4,14 +4,13 @@ import { shallow, mount } from 'enzyme';
 import Home from '../../src/pages/home/Home';
 
 describe('Testing Home Component...', () => {
-
   it('should render correctly', () => {
     const wrapper = shallow(<Home />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should show rules modal', () => {
-    const props = { showRules: true }
+    const props = { showRules: true };
 
     const wrapper = mount(
       <div id="root">
@@ -22,5 +21,5 @@ describe('Testing Home Component...', () => {
     wrapper.update();
 
     expect(wrapper.find('#modal-rules').exists()).toEqual(true);
-  })
+  });
 });

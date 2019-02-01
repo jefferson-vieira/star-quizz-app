@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Home from './pages/home/Home';
+import Router from './configs/router';
 
-const App = () => <Home />;
+const App = () => <Router />;
 
 export default App;
