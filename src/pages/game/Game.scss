@@ -1,0 +1,32 @@
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
+
+@import '../../assets/scss/variables';
+
+.game {
+  &-header {
+    color: $yellow;
+
+    &__logo img {
+      width: 80%;
+      height: auto;
+    }
+
+    &__title {
+      & h1 {
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+
+    &__timer {
+      position: fixed;
+      z-index: 10;
+
+      @include media-breakpoint-up(md) {
+        right: 0;
+      }
+    }
+  }
+}

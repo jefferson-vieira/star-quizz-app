@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Modal } from 'react-bootstrap';
 
 const Rules = ({ show, close }) => (
@@ -20,9 +21,9 @@ const Rules = ({ show, close }) => (
         <Button variant="secondary" onClick={close}>
           Fechar
         </Button>
-        <Button variant="warning" onClick={close}>
+        <Link to="/game" className="btn btn-warning">
           Começar
-        </Button>
+        </Link>
       </Modal.Footer>
     </Modal>
   </Fragment>
