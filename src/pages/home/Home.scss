@@ -1,0 +1,12 @@
+@import '../../assets/scss/variables';
+
+.home {
+  color: #fff;
+
+  &--yellow-text,
+  &__title,
+  &__play,
+  &__play:hover {
+    color: $yellow;
+  }
+}
