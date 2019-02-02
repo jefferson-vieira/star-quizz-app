@@ -1,7 +1,4 @@
-@import '../../../node_modules/bootstrap/scss/functions';
-@import '../../../node_modules/bootstrap/scss/variables';
-@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
-
+@import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
 
 .game {
@@ -24,8 +21,17 @@
       position: fixed;
       z-index: 10;
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(sm) {
         right: 0;
+        top: 0;
+      }
+
+      & > div {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      & p {
+        font-size: 2rem;
       }
     }
   }
