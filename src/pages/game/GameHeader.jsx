@@ -5,7 +5,10 @@ import logo from '../../assets/img/header-logo.svg';
 import GameTimer from './GameTimer';
 
 const GameHeader = () => (
-  <section id="game-header" className="game-header container-fuid">
+  <section
+    id="game-header"
+    className="game-header container-fuid border-bottom border-warning pb-3"
+  >
     <div className="row align-items-center mt-3">
       <div className="game-header__logo col-sm-3 text-center">
         <img

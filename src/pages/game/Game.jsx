@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Header from './GameHeader';
+import Body from './GameBody';
 
 import { operations } from '../../store/ducks/game';
 
 class Game extends Component {
   componentWillMount() {
-    this.props.getPeople();
+    // this.props.getPeople();
   }
 
   componentDidCatch() {
@@ -16,10 +17,10 @@ class Game extends Component {
   }
 
   render() {
-    console.log(this.props.people.results);
     return (
       <section id="game">
         <Header />
+        <Body />
       </section>
     );
   }
