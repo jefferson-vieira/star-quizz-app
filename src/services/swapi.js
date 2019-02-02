@@ -1,5 +1,9 @@
 import http from '../utils/http';
 
-export function getPeople() {
+const getPeople = () => {
   return http.get('/people');
-}
+};
+
+export default {
+  getPeople
+};

@@ -39,7 +39,7 @@ describe('Testing Router...', () => {
       <MemoryRouter initialEntries={['/game']}>
         <App />
       </MemoryRouter>
-    );
+    ).dive();
     expect(wrapper.find(Game)).toHaveLength(1);
   });
 });

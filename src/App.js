@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Router from './configs/router';
+import Router from './routes/router';
 
 const App = () => <Router />;
 

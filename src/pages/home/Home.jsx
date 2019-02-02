@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import './Home.scss';
-
 import Logo from '../../components/Logo';
 import Rules from '../../components/modals/Rules';
 
@@ -15,7 +13,7 @@ class Home extends Component {
   }
 
   handleRules = () => {
-    this.setState({ showRules: !this.state.showRules });
+    this.setState(prevState => ({ showRules: !prevState.showRules }));
   };
 
   render() {

@@ -3,8 +3,8 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 
-import Home from '../pages/home/Home';
-import Game from '../pages/game/Game';
+import Home from '../pages/home';
+import Game from '../pages/game';
 
 const Router = () => (
   <BrowserRouter>
