@@ -21,10 +21,10 @@
     &__timer {
       position: fixed;
       z-index: 10;
+      top: 0;
 
       @include media-breakpoint-up(sm) {
         right: 0;
-        top: 0;
       }
 
       @include media-breakpoint-down(sm) {

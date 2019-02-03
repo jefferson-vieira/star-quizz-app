@@ -8,14 +8,14 @@ const getName = data => data.map(d => d.data.name);
 /**
  * Needs refactor?
  */
-const getPeople = () => async dispatch => {
-  const { data } = await swapiService.getPeople();
+const getPeople = page => async dispatch => {
+  const { data } = await swapiService.getPeople(page);
 
   await Promise.all(
     ...data.results.map(person => [
-      gcseService.getImage(person.name).then(data => {
-        person.imgurl = data.items.link.shift();
-      }),
+      // gcseService.getImage(person.name).then(data => {
+      //   person.imgurl = data.items.link.shift();
+      // }),
       swapiService.getPersonData([person.homeworld]).then(data => {
         person.homeworld = getName(data);
       }),
@@ -23,10 +23,10 @@ const getPeople = () => async dispatch => {
         person.species = getName(data);
       }),
       swapiService.getPersonData(person.starships).then(data => {
-        person.starships = getName(data);
+        person.starships = getName(data).join(', ');
       }),
       swapiService.getPersonData(person.vehicles).then(data => {
-        person.vehicles = getName(data);
+        person.vehicles = getName(data).join(', ');
       })
     ])
   );
