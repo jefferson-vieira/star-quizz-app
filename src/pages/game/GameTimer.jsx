@@ -29,7 +29,7 @@ class GameTimer extends Component {
     const interval = setInterval(() => {
       if (this.state.time <= 0) {
         this.stopGame();
-      } else {
+      } else if (!this.props.pauseTimer) {
         this.setState(prevState => ({ time: prevState.time - 1 }));
       }
     }, 1000);

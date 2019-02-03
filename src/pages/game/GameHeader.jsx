@@ -4,7 +4,7 @@ import logo from '../../assets/img/header-logo.svg';
 
 import GameTimer from './GameTimer';
 
-const GameHeader = () => (
+const GameHeader = ({ pauseTimer }) => (
   <section
     id="game-header"
     className="game-header container-fuid border-bottom border-warning pb-3"
@@ -22,7 +22,7 @@ const GameHeader = () => (
         <h1>starquizz</h1>
         <h3>challenge</h3>
       </header>
-      <GameTimer />
+      <GameTimer pauseTimer={pauseTimer} />
     </div>
   </section>
 );

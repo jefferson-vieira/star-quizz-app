@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import Loading from '../../components/Loading';
+
 import Header from './GameHeader';
 import Body from './GameBody';
 import Footer from './GameFooter';
@@ -27,12 +29,13 @@ class Game extends Component {
   };
 
   render() {
-    const { people } = this.props;
+    const { loading, people } = this.props;
     const { currentPage } = this.state;
 
     return (
       <section id="game">
-        <Header />
+        <Loading show={loading} />
+        <Header pauseTimer={loading} />
         <Body people={people} />
         <Footer
           totalItems={people.count}
@@ -41,12 +44,14 @@ class Game extends Component {
           previous={!!people.previous}
           getPeople={this.getPeople}
         />
+        )}
       </section>
     );
   }
 }
 
 const mapStateToProps = state => ({
+  loading: state.game.loading,
   people: state.game.people
 });
 

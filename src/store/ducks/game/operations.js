@@ -9,6 +9,8 @@ const getName = data => data.map(d => d.data.name);
  * Needs refactor?
  */
 const getPeople = page => async dispatch => {
+  dispatch(actions.isLoading());
+
   const { data } = await swapiService.getPeople(page);
 
   await Promise.all(
