@@ -1,22 +1,9 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
 
 .game {
   &-header {
     color: $yellow;
-
-    &__logo img {
-      width: 80%;
-      height: auto;
-    }
-
-    &__title {
-      & h1 {
-        text-transform: uppercase;
-        font-weight: bold;
-      }
-    }
 
     &__timer {
       position: fixed;

@@ -24,7 +24,7 @@ const EndGame = ({
           <h1 className="title">{score}</h1>
         </div>
         <div className="col-12 text-center">
-          <strong>Tempo Restante</strong>
+          <strong>Tempo restante</strong>
           <h1>{time}</h1>
         </div>
       </div>

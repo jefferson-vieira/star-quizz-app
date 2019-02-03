@@ -58,13 +58,11 @@ class Game extends Component {
       const { name, email } = this.state.user;
 
       const storage = JSON.parse(localStorage.getItem('scores')) || [];
-      storage.push(
-        JSON.stringify({
-          name,
-          email,
-          score
-        })
-      );
+      storage.push({
+        name,
+        email,
+        score
+      });
       localStorage.setItem('scores', JSON.stringify(storage));
 
       this.setState({ savedScore: true });

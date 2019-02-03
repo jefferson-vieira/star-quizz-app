@@ -13,7 +13,7 @@ class GameTimer extends Component {
 
     this.state = {
       maxTime: MAX_TIME_IN_SECONDS,
-      time: 10
+      time: MAX_TIME_IN_SECONDS
     };
   }
 

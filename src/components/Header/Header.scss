@@ -1,0 +1,22 @@
+@import '../../assets/scss/breakpoints';
+
+.header {
+  &__logo {
+    height: 150px;
+
+    & img {
+      max-height: 100%;
+      width: auto;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: bold;
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+}

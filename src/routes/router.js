@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Home from '../pages/home';
 import Game from '../pages/game';
+import Rank from '../pages/rank';
 
 const Router = () => (
   <BrowserRouter>
@@ -12,6 +13,7 @@ const Router = () => (
       <Switch>
         <Route exact path="/(|home)" component={Home} />
         <Route exact path="/game" component={Game} />
+        <Route exact path="/rank" component={Rank} />
         <Redirect from="*" to="/home" />
       </Switch>
     </div>

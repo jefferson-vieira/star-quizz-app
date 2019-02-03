@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import Logo from '../../components/Logo';
 import Rules from '../../components/modals/Rules';
@@ -42,11 +43,18 @@ class Home extends Component {
               Está seguro disso? Então vá em frente e nos mostre...
             </h3>
             <div className="row justify-content-center">
-              {/* <a id="home-btn-rank" href="#" onClick={() => alert('rank')} className="btn btn-outline-light btn-lg m-3 link" title="Rank">Rank</a> */}
+              <Link
+                id="home-btn-rank"
+                to="/rank"
+                className="btn btn-outline-warning btn-lg w-25 m-3"
+                title="Rank"
+              >
+                Rank
+              </Link>
               <button
                 id="home-btn-play"
                 type="button"
-                className="btn btn-outline-warning btn-lg m-3"
+                className="btn btn-outline-warning btn-lg w-25 m-3"
                 title="Jogar"
                 onClick={this.handleRules}
               >
