@@ -41,11 +41,16 @@ class GameBody extends Component {
 
   render() {
     const { person, showHelp } = this.state;
+    const { endGame } = this.props;
 
     return (
       <section id="game-body" className="game-body container-fluid my-3">
         {this.renderCards()}
-        <Help person={person} show={showHelp} close={this.handleHelp} />
+        <Help
+          person={person}
+          show={showHelp && !endGame}
+          close={this.handleHelp}
+        />
       </section>
     );
   }

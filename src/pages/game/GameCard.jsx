@@ -54,9 +54,8 @@ class Card extends Component {
       >
         <div className="card-body">
           <img
-            className="card-img-top"
-            alt={`Personagem ${id} - Link: ${person.imgsrc}`}
-            src={person.imgsrc}
+            alt={`Personagem ${id} - Link: ${person.imgurl}`}
+            src={person.imgurl}
           />
         </div>
         <div className={`card-footer bg-transparent border-${cardStyle}`}>

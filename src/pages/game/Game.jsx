@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Loading from '../../components/Loading';
+import Error from '../../components/modals/Error';
 import EndGame from '../../components/modals/EndGame';
 
 import Header from './GameHeader';
@@ -71,7 +72,7 @@ class Game extends Component {
   };
 
   render() {
-    const { loading, people, score } = this.props;
+    const { loading, error, people, score } = this.props;
     const {
       currentPage,
       endGame,
@@ -84,8 +85,9 @@ class Game extends Component {
     return (
       <section id="game">
         <Loading show={loading} />
-        <Header pauseTimer={loading} stopGame={this.stopGame} />
-        <Body people={people} validAnswer={this.validAnswer} />
+        <Error show={error} refresh={() => this.getPeople(currentPage)} />
+        <Header pauseTimer={loading || error} stopGame={this.stopGame} />
+        <Body people={people} validAnswer={this.validAnswer} endGame={endGame} />
         <Footer
           totalItems={people.count}
           currentPage={currentPage}
@@ -110,6 +112,7 @@ class Game extends Component {
 
 const mapStateToProps = state => ({
   loading: state.game.loading,
+  error: state.game.error,
   people: state.game.people,
   score: state.game.score
 });

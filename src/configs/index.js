@@ -12,7 +12,7 @@ export const GOOLE_FILTERS = '&imgSize=medium&searchType=image&fields=items%2Fli
 
 export const GOOLE_KEY = '&key=AIzaSyDTS_j7it2O0IMpcrRZElbg0LulIQ4ayOw';
 
-export const GOOLE_CX_KEY = '&cx=001235129148922183661%3Awxgpbihjilq';
+export const GOOLE_CX_KEY = '&cx=001235129148922183661:wxgpbihjilq';
 
 // export const GOOLE_KEY = '&key=AIzaSyAq0FbZbXtcJYB4RwVQvNs57xNv7i84u94'
 // export const GOOLE_CX_KEY = '&cx=017142219542215380153:hvc-hb9dh40'

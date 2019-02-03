@@ -12,7 +12,7 @@ const Help = ({ person, show, close }) => (
           <img
             className="img-fluid rounded border-warning border"
             alt="Imagem"
-            src={person.imgsrc}
+            src={person.imgurl}
           />
         </div>
         <div className="col-6 details">
@@ -59,7 +59,7 @@ const Help = ({ person, show, close }) => (
       </div>
     </Modal.Body>
     <Modal.Footer>
-      <Button variant="secondary" onClick={close}>
+      <Button variant="secondary" onClick={close} title="Fechar ajuda">
         Fechar
       </Button>
     </Modal.Footer>

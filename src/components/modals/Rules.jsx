@@ -8,8 +8,10 @@ const Rules = ({ show, close }) => (
       <Modal.Title>Regras</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-      Você terá 2 minutos para acertar o nome do máximo de personagens de Star
-      Wars que puder. Pontuação:
+      <p>
+        Você terá 2 minutos para acertar o nome do máximo de personagens de Star
+        Wars que puder. Pontuação:
+      </p>
       <ul>
         <li>Acerto: 10 pontos</li>
         <li>Acerto (com ajuda): 5 pontos</li>
@@ -17,10 +19,10 @@ const Rules = ({ show, close }) => (
       </ul>
     </Modal.Body>
     <Modal.Footer>
-      <Button variant="secondary" onClick={close}>
+      <Button variant="secondary" onClick={close} title="Fechar regras">
         Fechar
       </Button>
-      <Link to="/game" className="btn btn-warning">
+      <Link to="/game" className="btn btn-warning" title="Iniciar jogo">
         Começar
       </Link>
     </Modal.Footer>

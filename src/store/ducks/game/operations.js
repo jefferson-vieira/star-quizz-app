@@ -13,29 +13,36 @@ const getName = data => data.map(d => d.data.name);
 const getPeople = page => async dispatch => {
   dispatch(actions.isLoading());
 
-  const { data } = await swapiService.getPeople(page);
+  try {
+    const { data } = await swapiService.getPeople(page);
 
-  await Promise.all(
-    ...data.results.map(person => [
-      // gcseService.getImage(person.name).then(data => {
-      //   person.imgurl = data.items.link.shift();
-      // }),
-      swapiService.getPersonData([person.homeworld]).then(data => {
-        person.homeworld = getName(data);
-      }),
-      swapiService.getPersonData(person.species).then(data => {
-        person.species = getName(data);
-      }),
-      swapiService.getPersonData(person.starships).then(data => {
-        person.starships = getName(data).join(', ');
-      }),
-      swapiService.getPersonData(person.vehicles).then(data => {
-        person.vehicles = getName(data).join(', ');
-      })
-    ])
-  );
+    await Promise.all(
+      ...data.results.map(person => [
+        // gcseService.getImage(person.name).then(data => {
+        //   person.imgurl = data.data.items.shift().link;
+        //   console.log('i', person.imgurl)
+        // }),
+        swapiService.getPersonData([person.homeworld]).then(data => {
+          person.homeworld = getName(data);
+        }),
+        swapiService.getPersonData(person.species).then(data => {
+          person.species = getName(data);
+        }),
+        swapiService.getPersonData(person.starships).then(data => {
+          person.starships = getName(data).join(', ');
+        }),
+        swapiService.getPersonData(person.vehicles).then(data => {
+          person.vehicles = getName(data).join(', ');
+        })
+      ])
+    );
 
-  dispatch(actions.getPeople(data));
+    console.log('d', data)
+
+    dispatch(actions.getPeople(data));
+  } catch (error) {
+    dispatch(actions.hasError());
+  }
 };
 
 const validateAnswer = usesHelp => (dispatch, getState) => {
