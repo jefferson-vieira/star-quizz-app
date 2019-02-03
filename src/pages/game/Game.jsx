@@ -9,7 +9,7 @@ import { operations } from '../../store/ducks/game';
 
 class Game extends Component {
   componentWillMount() {
-    // this.props.getPeople();
+    this.props.getPeople();
   }
 
   componentDidCatch() {
@@ -20,7 +20,7 @@ class Game extends Component {
     return (
       <section id="game">
         <Header />
-        <Body />
+        <Body people={this.props.people} />
       </section>
     );
   }

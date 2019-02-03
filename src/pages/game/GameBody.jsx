@@ -1,68 +1,51 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
-import Card from '../../components/Card';
+import Help from '../../components/modals/Help';
+
+import GameCard from './GameCard';
 
 import logo from '../../assets/img/logo.png';
 
-import { operations } from '../../store/ducks/game';
-
 class GameBody extends Component {
-  componentWillMount() {
-    this.props.getPeople();
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      person: {},
+      showHelp: false
+    };
   }
 
-  checkAnswer = answer => {
-    console.log(answer);
+  handleHelp = () => {
+    this.setState(prevState => ({ showHelp: !prevState.showHelp }));
   };
 
-  isCorrect = (answer, person) => {
-    console.log(answer.toLowerCase() === person.name.toLowerCase());
-    return answer.toLowerCase() === person.name.toLowerCase();
+  showHelp = person => {
+    this.setState(prevState => ({ person, showHelp: !prevState.showHelp }));
   };
 
   renderCards = () => {
     const people = this.props.people.results || [];
     return people.map((person, index) => (
-      <Card
+      <GameCard
         key={index}
         id={index}
         person={person}
-        cardStyle="success"
-        img={logo}
-        imgsrc={'aff'}
-        isValid={false}
-        checkAnswer={this.checkAnswer}
-        isCorrect={false}
-        showHelp={false}
-        showInput={false}
+        showHelp={this.showHelp}
       />
     ));
   };
 
   render() {
-    console.log(this.props.people.results);
+    const { person, showHelp } = this.state;
 
     return (
-      <div className="game-body container-fluid my-3">{this.renderCards()}</div>
+      <section id="game-body" className="game-body container-fluid my-3">
+        {this.renderCards()}
+        <Help person={person} show={showHelp} close={this.handleHelp} />
+      </section>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  people: state.game.people
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      getPeople: operations.getPeople
-    },
-    dispatch
-  );
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(GameBody);
+export default GameBody;
