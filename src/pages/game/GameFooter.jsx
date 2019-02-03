@@ -27,7 +27,6 @@ class GameFooter extends Component {
 
   render() {
     const { currentPage, getPeople, next, previous } = this.props;
-    console.log(next, previous);
 
     return (
       <section id="game-footer" className="border-top border-warning pt-3">

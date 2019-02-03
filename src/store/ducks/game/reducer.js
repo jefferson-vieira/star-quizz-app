@@ -3,7 +3,7 @@ import types from './types';
 const INITIAL_STATE = {
   loading: true,
   people: [],
-  points: 0
+  score: 0
 };
 
 const gameReducer = (state = INITIAL_STATE, action) => {
@@ -13,7 +13,7 @@ const gameReducer = (state = INITIAL_STATE, action) => {
     case types.PEOPLE_FETCHED:
       return { ...state, loading: false, people: action.payload };
     case types.VALIDATE_ANSWER:
-      return { ...state, points: action.payload };
+      return { ...state, score: action.payload };
     default:
       return state;
   }

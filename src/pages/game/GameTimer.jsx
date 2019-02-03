@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import moment from 'moment';
-
 import Progress from '../../components/Progress';
 
 import { MAX_TIME_IN_SECONDS } from '../../configs';
+
+import timeUtils from '../../utils/time';
 
 class GameTimer extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class GameTimer extends Component {
 
     this.state = {
       maxTime: MAX_TIME_IN_SECONDS,
-      time: MAX_TIME_IN_SECONDS
+      time: 10
     };
   }
 
@@ -36,39 +36,38 @@ class GameTimer extends Component {
     this.setState({ interval });
   };
 
-  getTime = () => {
-    return moment('00:02:00', 'HH:mm:ss')
-      .subtract(this.state.maxTime - this.state.time, 'seconds')
-      .format('HH:mm:ss');
-  };
-
   getProgress = () => (this.state.time / this.state.maxTime) * 100;
 
   stopGame = () => {
-    clearInterval(this.state.interval);
-    alert('fim');
+    const { interval, maxTime, time } = this.state;
+
+    clearInterval(interval);
+    this.props.stopGame(timeUtils.getTime('00:02:00', maxTime - time));
   };
 
   render() {
+    const { maxTime, time } = this.state;
+
     return (
       <div className="game-header__timer m-3">
         <div className="row align-items-center border border-warning rounded p-3 m-1">
           <div className="col-12 text-center">
             <p id="timer" className="text-border mb-0">
-              {this.getTime()}
+              {timeUtils.getTime('00:02:00', maxTime - time)}
             </p>
           </div>
           <div className="col-12 my-3">
             <Progress valuenow={this.getProgress()} />
           </div>
           <div className="col-12 text-center">
-            <Link
-              to="/home"
-              className="btn btn-opt btn-danger"
+            <button
+              type="button"
+              className="btn btn-danger"
               title="Desistir"
+              onClick={this.stopGame}
             >
               Desistir
-            </Link>
+            </button>
           </div>
         </div>
       </div>

@@ -9,9 +9,9 @@ const getPeople = data => ({
   payload: data
 });
 
-const validateAnswer = newPoints => ({
+const validateAnswer = newScore => ({
   type: types.VALIDATE_ANSWER,
-  payload: newPoints
+  payload: newScore
 });
 
 export default {

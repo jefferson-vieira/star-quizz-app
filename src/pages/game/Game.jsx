@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Loading from '../../components/Loading';
+import EndGame from '../../components/modals/EndGame';
 
 import Header from './GameHeader';
 import Body from './GameBody';
@@ -15,7 +16,8 @@ class Game extends Component {
     super(props);
 
     this.state = {
-      currentPage: 1
+      currentPage: 1,
+      user: { name: '', email: '' }
     };
   }
 
@@ -32,16 +34,59 @@ class Game extends Component {
     this.props.validateAnswer(usesHelp);
   };
 
-  render() {
-    const { loading, people } = this.props;
-    const { currentPage } = this.state;
+  stopGame = remainingTime => {
+    this.setState({ endGame: true, remainingTime });
+  };
 
-    console.log(this.props.points);
+  handleInputChange = event => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState(prevState => ({
+      user: { ...prevState.user, [name]: value }
+    }));
+  };
+
+  saveUser = event => {
+    const form = event.currentTarget;
+
+    event.preventDefault();
+
+    if (form.checkValidity()) {
+      const { score } = this.props;
+      const { name, email } = this.state.user;
+
+      const storage = JSON.parse(localStorage.getItem('scores')) || [];
+      storage.push(
+        JSON.stringify({
+          name,
+          email,
+          score
+        })
+      );
+      localStorage.setItem('scores', JSON.stringify(storage));
+
+      this.setState({ savedScore: true });
+    }
+    this.setState({ validated: true });
+  };
+
+  render() {
+    const { loading, people, score } = this.props;
+    const {
+      currentPage,
+      endGame,
+      remainingTime,
+      user,
+      validated,
+      savedScore
+    } = this.state;
 
     return (
       <section id="game">
         <Loading show={loading} />
-        <Header pauseTimer={loading} />
+        <Header pauseTimer={loading} stopGame={this.stopGame} />
         <Body people={people} validAnswer={this.validAnswer} />
         <Footer
           totalItems={people.count}
@@ -50,7 +95,16 @@ class Game extends Component {
           previous={!!people.previous}
           getPeople={this.getPeople}
         />
-        )}
+        <EndGame
+          show={endGame}
+          score={score}
+          time={remainingTime}
+          inputChange={this.handleInputChange}
+          user={user}
+          saveUser={this.saveUser}
+          validated={validated}
+          savedScore={savedScore}
+        />
       </section>
     );
   }
@@ -59,7 +113,7 @@ class Game extends Component {
 const mapStateToProps = state => ({
   loading: state.game.loading,
   people: state.game.people,
-  points: state.game.points
+  score: state.game.score
 });
 
 const mapDispatchToProps = dispatch =>

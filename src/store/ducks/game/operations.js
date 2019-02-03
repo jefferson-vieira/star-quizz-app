@@ -39,11 +39,11 @@ const getPeople = page => async dispatch => {
 };
 
 const validateAnswer = usesHelp => (dispatch, getState) => {
-  const newPoints =
-    getState().game.points +
+  const newScore =
+    getState().game.score +
     (usesHelp ? ANSWER_POINTS_WITH_HELP : ANSWER_POINTS);
 
-  dispatch(actions.validateAnswer(newPoints));
+  dispatch(actions.validateAnswer(newScore));
 };
 
 export default {
