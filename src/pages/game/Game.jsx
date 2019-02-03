@@ -28,15 +28,21 @@ class Game extends Component {
     this.setState({ currentPage: page });
   };
 
+  validAnswer = usesHelp => {
+    this.props.validateAnswer(usesHelp);
+  };
+
   render() {
     const { loading, people } = this.props;
     const { currentPage } = this.state;
+
+    console.log(this.props.points);
 
     return (
       <section id="game">
         <Loading show={loading} />
         <Header pauseTimer={loading} />
-        <Body people={people} />
+        <Body people={people} validAnswer={this.validAnswer} />
         <Footer
           totalItems={people.count}
           currentPage={currentPage}
@@ -52,13 +58,15 @@ class Game extends Component {
 
 const mapStateToProps = state => ({
   loading: state.game.loading,
-  people: state.game.people
+  people: state.game.people,
+  points: state.game.points
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      getPeople: operations.getPeople
+      getPeople: operations.getPeople,
+      validateAnswer: operations.validateAnswer
     },
     dispatch
   );

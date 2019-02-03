@@ -1,5 +1,9 @@
 export const MAX_TIME_IN_SECONDS = 120;
 
+export const ANSWER_POINTS = 10;
+
+export const ANSWER_POINTS_WITH_HELP = 5;
+
 export const SW_API_URL = 'https://swapi.co/api';
 
 export const GOOLE_API_URL = 'https://www.googleapis.com/customsearch/v1?q=';

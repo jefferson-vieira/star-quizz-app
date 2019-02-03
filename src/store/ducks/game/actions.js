@@ -9,7 +9,13 @@ const getPeople = data => ({
   payload: data
 });
 
+const validateAnswer = newPoints => ({
+  type: types.VALIDATE_ANSWER,
+  payload: newPoints
+});
+
 export default {
   isLoading,
-  getPeople
+  getPeople,
+  validateAnswer
 };

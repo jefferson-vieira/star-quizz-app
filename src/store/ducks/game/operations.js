@@ -3,6 +3,8 @@ import actions from './actions';
 import swapiService from '../../../services/swapi';
 import gcseService from '../../../services/gcse';
 
+import { ANSWER_POINTS, ANSWER_POINTS_WITH_HELP } from '../../../configs/index';
+
 const getName = data => data.map(d => d.data.name);
 
 /**
@@ -36,7 +38,16 @@ const getPeople = page => async dispatch => {
   dispatch(actions.getPeople(data));
 };
 
+const validateAnswer = usesHelp => (dispatch, getState) => {
+  const newPoints =
+    getState().game.points +
+    (usesHelp ? ANSWER_POINTS_WITH_HELP : ANSWER_POINTS);
+
+  dispatch(actions.validateAnswer(newPoints));
+};
+
 export default {
   ...actions,
-  getPeople
+  getPeople,
+  validateAnswer
 };

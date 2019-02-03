@@ -6,7 +6,8 @@ class Card extends Component {
 
     this.state = {
       cardStyle: 'warning',
-      shouldShowInput: false
+      shouldShowInput: false,
+      usesHelp: false
     };
   }
 
@@ -16,9 +17,17 @@ class Card extends Component {
     }));
   };
 
+  showHelp = () => {
+    const { person, showHelp } = this.props;
+
+    this.setState({ usesHelp: true });
+    showHelp(person);
+  };
+
   checkAnswer = event => {
     const answer = event.target.value.toLowerCase();
     const personName = this.props.person.name.toLowerCase();
+    const { usesHelp } = this.state;
 
     const isCorrect = answer === personName;
     if (!isCorrect) {
@@ -30,12 +39,13 @@ class Card extends Component {
         cardStyle: 'success',
         isCorrect: true
       });
+      this.props.validAnswer(usesHelp);
     }
   };
 
   render() {
-    const { id, person, showHelp } = this.props;
-    const { cardStyle, isCorrect } = this.state;
+    const { id, person } = this.props;
+    const { cardStyle, shouldShowInput, isCorrect } = this.state;
 
     return (
       <div
@@ -51,7 +61,7 @@ class Card extends Component {
         </div>
         <div className={`card-footer bg-transparent border-${cardStyle}`}>
           <div className="row game-card--fade">
-            {this.state.shouldShowInput ? (
+            {shouldShowInput ? (
               <div className="col-12 my-1">
                 <div className="form-group mb-0">
                   <label htmlFor={`game-card-input-${id}`} className="sr-only">
@@ -76,7 +86,7 @@ class Card extends Component {
                       type="button"
                       className="btn btn-outline-dark w-100"
                       title="Ajuda"
-                      onClick={() => showHelp(person)}
+                      onClick={this.showHelp}
                     >
                       ...
                     </button>

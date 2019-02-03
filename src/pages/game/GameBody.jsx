@@ -25,13 +25,16 @@ class GameBody extends Component {
   };
 
   renderCards = () => {
-    const people = this.props.people.results || [];
-    return people.map((person, index) => (
+    const { people, validAnswer } = this.props;
+    const peopleList = people.results || [];
+
+    return peopleList.map((person, index) => (
       <GameCard
         key={index}
         id={index}
         person={person}
         showHelp={this.showHelp}
+        validAnswer={validAnswer}
       />
     ));
   };
