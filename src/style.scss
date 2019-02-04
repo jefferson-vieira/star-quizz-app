@@ -1,4 +1,4 @@
-@import '~bootstrap/scss/bootstrap.scss';
+@import 'bootstrap/scss/bootstrap.scss';
 
 body {
   margin: 0;
@@ -9,7 +9,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: url('./assets/img/background.jpg');
+  background: url('assets/img/background.jpg');
   background-attachment: fixed;
 }
 

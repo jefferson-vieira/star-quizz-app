@@ -1,6 +1,6 @@
-import http from '../utils/http';
+import http from '@/utils/http';
 
-import { SW_API_URL } from '../configs';
+import { SW_API_URL } from '@/configs';
 
 const getPeople = (page = 1) => {
   return http.get(`${SW_API_URL}/people?page=${page}`);

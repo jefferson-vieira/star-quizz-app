@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 
-import Help from '../../components/modals/Help';
+import Help from '@/components/modals/Help';
 
 import GameCard from './GameCard';
-
-import logo from '../../assets/img/logo.png';
 
 class GameBody extends Component {
   constructor(props) {

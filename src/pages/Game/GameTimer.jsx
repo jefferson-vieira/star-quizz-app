@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
-import Progress from '../../components/Progress';
+import Progress from '@/components/Progress';
 
-import { MAX_TIME_IN_SECONDS } from '../../configs';
+import { MAX_TIME_IN_SECONDS } from '@/configs';
 
-import timeUtils from '../../utils/time';
+import timeUtils from '@/utils/time';
 
 class GameTimer extends Component {
   constructor(props) {

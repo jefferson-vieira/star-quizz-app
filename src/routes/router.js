@@ -3,10 +3,10 @@ import React from 'react';
 import { Switch, Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 
-import Home from '../pages/Home';
-import Game from '../pages/Game';
-import Rank from '../pages/Rank';
-import NotFound from '../pages/NotFound';
+import Home from '@/pages/Home';
+import Game from '@/pages/Game';
+import Rank from '@/pages/Rank';
+import NotFound from '@/pages/NotFound';
 
 const Router = () => (
   <BrowserRouter>

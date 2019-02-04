@@ -1,11 +1,11 @@
-import http from '../utils/http';
+import http from '@/utils/http';
 
 import {
   GOOLE_API_URL,
   GOOLE_FILTERS,
   GOOLE_KEY,
   GOOLE_CX_KEY
-} from '../configs';
+} from '@/configs';
 
 const getImage = name => {
   return http.get(

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Logo from '../../components/Logo';
-import Rules from '../../components/modals/Rules';
+import Logo from '@/components/Logo';
+import Rules from '@/components/modals/Rules';
 
 class Home extends Component {
   constructor(props) {

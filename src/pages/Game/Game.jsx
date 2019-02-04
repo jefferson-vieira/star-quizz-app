@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Loading from '../../components/Loading';
-import Error from '../../components/modals/Error';
-import EndGame from '../../components/modals/EndGame';
+import Loading from '@/components/Loading';
+import Error from '@/components/modals/Error';
+import EndGame from '@/components/modals/EndGame';
 
 import Header from './GameHeader';
 import Body from './GameBody';
 import Footer from './GameFooter';
 
-import { operations } from '../../store/ducks/game';
+import { operations } from '@/store/ducks/game';
 
 class Game extends Component {
   constructor(props) {

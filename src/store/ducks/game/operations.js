@@ -1,9 +1,9 @@
 import actions from './actions';
 
-import swapiService from '../../../services/swapi';
-import gcseService from '../../../services/gcse';
+import swapiService from '@/services/swapi';
+import gcseService from '@/services/gcse';
 
-import { ANSWER_POINTS, ANSWER_POINTS_WITH_HELP } from '../../../configs/index';
+import { ANSWER_POINTS, ANSWER_POINTS_WITH_HELP } from '@/configs';
 
 const getName = data => data.map(d => d.data.name);
 
