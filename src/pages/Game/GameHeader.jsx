@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Header from '@/components/Header';
+import PageHeader from '@/components/PageHeader';
 
 import GameTimer from './GameTimer';
 
 const GameHeader = ({ pauseTimer, stopGame }) => (
   <section id="game-header" className="game-header container-fuid">
-    <Header />
+    <PageHeader />
     <GameTimer pauseTimer={pauseTimer} stopGame={stopGame} />
   </section>
 );

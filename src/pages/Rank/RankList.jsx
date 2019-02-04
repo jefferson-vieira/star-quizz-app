@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Header from '@/components/Header';
+
 const renderRows = players => {
   return players.map((player, index) => (
     <tr key={index}>
@@ -13,9 +15,7 @@ const renderRows = players => {
 
 const RankList = ({ players }) => (
   <section id="rank-list" className="container my-5">
-    <header className="rank-list__header border-warning border-bottom pb-2 my-3">
-      <h1>Rank</h1>
-    </header>
+    <Header title="Rank" />
     {players.length ? (
       <div className="table-responsive">
         <table className="table table-dark table-striped table-bordered table-hover my-3">

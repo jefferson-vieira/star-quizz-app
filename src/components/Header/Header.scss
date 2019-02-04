@@ -1,22 +1,8 @@
-@import 'assets/scss/breakpoints';
+@import 'assets/scss/variables';
 
-.header {
-  &__logo {
-    height: 150px;
-
-    & img {
-      max-height: 100%;
-      width: auto;
-    }
-  }
-
-  &__title {
-    text-transform: uppercase;
+.page-header {
+  h1 {
     font-weight: bold;
-
-    @include media-breakpoint-down(sm) {
-      text-align: center;
-      margin-top: 1rem;
-    }
+    color: $yellow;
   }
 }

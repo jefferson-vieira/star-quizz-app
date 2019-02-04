@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
-import Header from '@/components/Header';
+import PageHeader from '@/components/PageHeader';
+import HomeButton from '@/components/HomeButton';
 
 import RankList from './RankList';
 
@@ -23,18 +23,10 @@ class Rank extends Component {
     const { players } = this.state;
 
     return (
-      <section id="rank" className="container-fluid">
-        <Header />
+      <section id="rank" className="rank container-fluid">
+        <PageHeader />
         <RankList players={players} />
-        <div className="row justify-content-center">
-          <Link
-            to="/home"
-            className="btn btn-outline-warning btn-lg"
-            title="Home"
-          >
-            Home
-          </Link>
-        </div>
+        <HomeButton />
       </section>
     );
   }

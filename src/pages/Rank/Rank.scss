@@ -1,12 +1,7 @@
 @import 'assets/scss/variables';
 
 .rank-list {
-  &__header h1 {
-    font-weight: bold;
-    color: $yellow;
-  }
-
   &__message {
-    color: #eee;
+    color: $white;
   }
 }

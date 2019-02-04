@@ -30,7 +30,7 @@ class GameFooter extends Component {
 
     return (
       <section id="game-footer" className="border-top border-warning pt-3">
-        <nav aria-label="Page navigation example">
+        <nav aria-label="Game Navigation">
           <ul className="pagination pagination-lg justify-content-center">
             <li className={`page-item ${!previous && 'disabled'}`}>
               <a

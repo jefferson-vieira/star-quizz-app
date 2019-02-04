@@ -1,16 +1,16 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-// import { Provider } from 'react-redux';
-// import store from './store/ducks';
+import { Provider } from 'react-redux';
+import store from './store/ducks';
 
-// import './style.scss';
+import './style.scss';
 
-// import App from './App';
+import App from './App';
 
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <App />
-//   </Provider>,
-//   document.getElementById('root')
-// );
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);

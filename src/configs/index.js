@@ -1,5 +1,7 @@
 export const MAX_TIME_IN_SECONDS = 120;
 
+export const MAX_TIME_STRING = '00:02:00';
+
 export const ANSWER_POINTS = 10;
 
 export const ANSWER_POINTS_WITH_HELP = 5;
