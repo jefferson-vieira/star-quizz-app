@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { Switch, Route, Redirect } from 'react-router';
+import { Switch, Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 
-import Home from '../pages/home';
-import Game from '../pages/game';
-import Rank from '../pages/rank';
+import Home from '../pages/Home';
+import Game from '../pages/Game';
+import Rank from '../pages/Rank';
+import NotFound from '../pages/NotFound';
 
 const Router = () => (
   <BrowserRouter>
@@ -14,7 +15,7 @@ const Router = () => (
         <Route exact path="/(|home)" component={Home} />
         <Route exact path="/game" component={Game} />
         <Route exact path="/rank" component={Rank} />
-        <Redirect from="*" to="/home" />
+        <Route component={NotFound} />
       </Switch>
     </div>
   </BrowserRouter>

@@ -18,10 +18,9 @@ const getPeople = page => async dispatch => {
 
     await Promise.all(
       ...data.results.map(person => [
-        // gcseService.getImage(person.name).then(data => {
-        //   person.imgurl = data.data.items.shift().link;
-        //   console.log('i', person.imgurl)
-        // }),
+        gcseService.getImage(person.name).then(data => {
+          person.imgurl = data.data.items.shift().link;
+        }),
         swapiService.getPersonData([person.homeworld]).then(data => {
           person.homeworld = getName(data);
         }),
@@ -36,8 +35,6 @@ const getPeople = page => async dispatch => {
         })
       ])
     );
-
-    console.log('d', data)
 
     dispatch(actions.getPeople(data));
   } catch (error) {

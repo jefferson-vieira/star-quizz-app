@@ -22,7 +22,7 @@ class Game extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getPeople();
   }
 
@@ -83,7 +83,7 @@ class Game extends Component {
     } = this.state;
 
     return (
-      <section id="game">
+      <section id="game" className="container-fluid">
         <Loading show={loading} />
         <Error show={error} refresh={() => this.getPeople(currentPage)} />
         <Header pauseTimer={loading || error} stopGame={this.stopGame} />

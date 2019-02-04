@@ -1,0 +1,12 @@
+@import '../../assets/scss/variables';
+
+.not-found {
+  &__header h1 {
+    font-weight: bold;
+    color: $yellow;
+  }
+
+  &__message {
+    color: #eee;
+  }
+}
