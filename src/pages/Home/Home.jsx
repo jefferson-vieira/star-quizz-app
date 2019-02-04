@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Logo from '@/components/Logo';
 import Rules from '@/components/modals/Rules';
 
-class Home extends Component {
+export default class Home extends Component {
   constructor(props) {
     super(props);
 
@@ -69,4 +69,3 @@ class Home extends Component {
   }
 }
 
-export default Home;

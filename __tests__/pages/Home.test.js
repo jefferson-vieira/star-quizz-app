@@ -1,25 +1,25 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
+// import React from 'react';
+// import { shallow, mount } from 'enzyme';
 
-import Home from '../../src/pages/home/Home';
+// import Home from '../../src/pages/home/Home';
 
-describe('Testing Home Component...', () => {
-  it('should render correctly', () => {
-    const wrapper = shallow(<Home />);
-    expect(wrapper).toMatchSnapshot();
-  });
+// describe('Testing Home Component...', () => {
+//   it('should render correctly', () => {
+//     const wrapper = shallow(<Home />);
+//     expect(wrapper).toMatchSnapshot();
+//   });
 
-  it('should show rules modal', () => {
-    const props = { showRules: true };
+//   it('should show rules modal', () => {
+//     const props = { showRules: true };
 
-    const wrapper = mount(
-      <div id="root">
-        <Home {...props} />
-      </div>
-    );
+//     const wrapper = mount(
+//       <div id="root">
+//         <Home {...props} />
+//       </div>
+//     );
 
-    wrapper.update();
+//     wrapper.update();
 
-    expect(wrapper.find('#modal-rules').exists()).toEqual(true);
-  });
-});
+//     expect(wrapper.find('#modal-rules').exists()).toEqual(true);
+//   });
+// });
