@@ -1,0 +1,306 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing NotFound Component... should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NotFound />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Header />,
+        <section
+          className="container my-5"
+        >
+          <PageHeader
+            title="Ops..."
+          />
+          <div
+            className="not-found__message my-5"
+          >
+            <h2>
+              Página não encontrada.
+            </h2>
+            <h3>
+              Clique no botão abaixo para ir até a página inicial.
+            </h3>
+          </div>
+          <HomeButton />
+        </section>,
+      ],
+      "className": "not-found container-fluid",
+      "id": "not-found",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <PageHeader
+              title="Ops..."
+            />,
+            <div
+              className="not-found__message my-5"
+            >
+              <h2>
+                Página não encontrada.
+              </h2>
+              <h3>
+                Clique no botão abaixo para ir até a página inicial.
+              </h3>
+            </div>,
+            <HomeButton />,
+          ],
+          "className": "container my-5",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "title": "Ops...",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h2>
+                  Página não encontrada.
+                </h2>,
+                <h3>
+                  Clique no botão abaixo para ir até a página inicial.
+                </h3>,
+              ],
+              "className": "not-found__message my-5",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Página não encontrada.",
+                },
+                "ref": null,
+                "rendered": "Página não encontrada.",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Clique no botão abaixo para ir até a página inicial.",
+                },
+                "ref": null,
+                "rendered": "Clique no botão abaixo para ir até a página inicial.",
+                "type": "h3",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "section",
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Header />,
+          <section
+            className="container my-5"
+          >
+            <PageHeader
+              title="Ops..."
+            />
+            <div
+              className="not-found__message my-5"
+            >
+              <h2>
+                Página não encontrada.
+              </h2>
+              <h3>
+                Clique no botão abaixo para ir até a página inicial.
+              </h3>
+            </div>
+            <HomeButton />
+          </section>,
+        ],
+        "className": "not-found container-fluid",
+        "id": "not-found",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <PageHeader
+                title="Ops..."
+              />,
+              <div
+                className="not-found__message my-5"
+              >
+                <h2>
+                  Página não encontrada.
+                </h2>
+                <h3>
+                  Clique no botão abaixo para ir até a página inicial.
+                </h3>
+              </div>,
+              <HomeButton />,
+            ],
+            "className": "container my-5",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "title": "Ops...",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h2>
+                    Página não encontrada.
+                  </h2>,
+                  <h3>
+                    Clique no botão abaixo para ir até a página inicial.
+                  </h3>,
+                ],
+                "className": "not-found__message my-5",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Página não encontrada.",
+                  },
+                  "ref": null,
+                  "rendered": "Página não encontrada.",
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Clique no botão abaixo para ir até a página inicial.",
+                  },
+                  "ref": null,
+                  "rendered": "Clique no botão abaixo para ir até a página inicial.",
+                  "type": "h3",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "section",
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
