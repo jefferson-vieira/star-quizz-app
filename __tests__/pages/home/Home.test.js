@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { shallow, mount } from 'enzyme';
 
 import Home from '../../../src/pages/Home/Home';
+import Rules from '../../../src/components/modals/Rules';
 
 describe('Testing Home Component...', () => {
   it('should render correctly', () => {
@@ -11,24 +12,22 @@ describe('Testing Home Component...', () => {
   });
 
   it('should show rules modal', () => {
-    const props = { showRules: true };
-
+    const props = { showRules: false };
     const wrapper = mount(
-      <div id="root">
-        <MemoryRouter>
-          <Home {...props} />
-        </MemoryRouter>
-      </div>
+      <MemoryRouter>
+        <Home {...props} />
+      </MemoryRouter>
     );
 
-    wrapper.update();
+    expect(wrapper.find(Rules).isEmptyRender()).toBe(false);
 
-    expect(wrapper.find('#modal-rules').exists()).toBe(true);
+    wrapper.setProps({ showRules: false });
+    expect(wrapper.find(Rules).isEmptyRender()).toBe(false);
   });
 
   it('should can redirect to /rank', () => {
     const wrapper = mount(
-      <MemoryRouter initialEntries={['/random']}>
+      <MemoryRouter initialEntries={['/home']}>
         <Home />
       </MemoryRouter>
     );

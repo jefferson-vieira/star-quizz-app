@@ -8,6 +8,4 @@ describe('Testing Game Component...', () => {
     const wrapper = shallow(<Game />);
     expect(wrapper).toMatchSnapshot();
   });
-
-
 });
