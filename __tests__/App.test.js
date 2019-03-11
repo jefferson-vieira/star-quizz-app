@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 
@@ -31,7 +30,7 @@ describe('Testing Router...', () => {
     expect(wrapper.find(NotFound)).toHaveLength(0);
   });
 
-  it('should path /home redirects to Home', () => {
+  it('should valid path not redirects to 404', () => {
     const wrapper = mount(
       <MemoryRouter initialEntries={['/home']}>
         <App />
@@ -39,28 +38,6 @@ describe('Testing Router...', () => {
     );
 
     expect(wrapper.find(Home)).toHaveLength(1);
-    expect(wrapper.find(NotFound)).toHaveLength(0);
-  });
-
-  it('should path /game redirects to Game', () => {
-    const wrapper = mount(
-      <MemoryRouter initialEntries={['/game']}>
-        <App />
-      </MemoryRouter>
-    );
-
-    expect(wrapper.find(Game)).toHaveLength(1);
-    expect(wrapper.find(NotFound)).toHaveLength(0);
-  });
-
-  it('should path /rank redirects to Rank', () => {
-    const wrapper = mount(
-      <MemoryRouter initialEntries={['/rank']}>
-        <App />
-      </MemoryRouter>
-    );
-
-    expect(wrapper.find(Rank)).toHaveLength(1);
     expect(wrapper.find(NotFound)).toHaveLength(0);
   });
 
