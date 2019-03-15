@@ -5,18 +5,16 @@ import HomeButton from '@/components/HomeButton';
 
 import RankList from './RankList';
 
-class Rank extends Component {
-  constructor(props) {
-    super(props);
+import playerService from '@/services/player';
 
-    this.state = {
-      players: []
-    };
-  }
+class Rank extends Component {
+  state = {
+    players: []
+  };
 
   componentDidMount() {
-    const storage = JSON.parse(localStorage.getItem('scores')) || [];
-    this.setState({ players: storage });
+    const players = playerService.getPlayers();
+    this.setState({ players });
   }
 
   render() {

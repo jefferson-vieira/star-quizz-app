@@ -1,9 +1,9 @@
-@import 'assets/scss/breakpoints';
 @import 'assets/scss/variables';
+@import 'assets/scss/breakpoints';
 
 .game {
   &-header {
-    color: $yellow;
+    color: $primary;
 
     &__timer {
       position: fixed;
@@ -62,5 +62,10 @@
         }
       }
     }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: center;
   }
 }

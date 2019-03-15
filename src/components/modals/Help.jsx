@@ -1,65 +1,65 @@
 import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
 
-const Help = ({ person, show, close }) => (
+const Help = ({ character, show, close }) => (
   <Modal id="modal-help" show={show} onHide={close}>
     <Modal.Header closeButton>
-      <Modal.Title>Regras</Modal.Title>
+      <Modal.Title>Sobre o Personagem</Modal.Title>
     </Modal.Header>
     <Modal.Body>
       <div className="row">
-        <div className="col-6">
+        <div className="col-12 col-md-6">
           <img
-            className="img-fluid rounded border-warning border"
-            alt="Imagem"
-            src={person.imgurl}
+            className="img-fluid rounded border-primary border"
+            alt="Imagem do personagem"
+            src={character.imgsrc}
           />
         </div>
-        <div className="col-6 details">
+        <div className="col-12 col-md-6">
           <ul className="pl-3">
             <li>
-              <strong>Planeta:</strong> {person.homeworld}
+              <strong>Planeta:</strong> {character.homeworld}
             </li>
             <li>
-              <strong>Espécie:</strong> {person.species}
+              <strong>Espécie:</strong> {character.species}
             </li>
             <li>
-              <strong>Nascimento:</strong> {person.birth_year}
+              <strong>Nascimento:</strong> {character.birth_year}
             </li>
             <li>
-              <strong>Gênero:</strong> {person.gender}
+              <strong>Gênero:</strong> {character.gender}
             </li>
             <li>
-              <strong>Altura:</strong> {person.height / 100}m
+              <strong>Altura:</strong> {character.height / 100}m
             </li>
             <li>
-              <strong>Peso:</strong> {person.mass} Kg
+              <strong>Peso:</strong> {character.mass} Kg
             </li>
             <li>
-              <strong>Cor dos olhos:</strong> {person.eye_color}
+              <strong>Cor dos olhos:</strong> {character.eye_color}
             </li>
             <li>
-              <strong>Cor do cabelo:</strong> {person.hair_color}
+              <strong>Cor do cabelo:</strong> {character.hair_color}
             </li>
             <li>
-              <strong>Cor da pele:</strong> {person.skin_color}
+              <strong>Cor da pele:</strong> {character.skin_color}
             </li>
-          </ul>
-        </div>
-        <div className="col-12 details">
-          <ul className="pl-3 mt-3 mb-0">
+          {/* </ul>
+        </div> */}
+        {/* <div className="col-12">
+          <ul className="pl-3 mt-md-3 mb-0"> */}
             <li>
-              <strong>Naves:</strong> {person.starships}
+              <strong>Naves:</strong> {character.starships || 'Nenhum'}
             </li>
             <li>
-              <strong>Veículos:</strong> {person.vehicles}
+              <strong>Veículos:</strong> {character.vehicles || 'Nenhum'}
             </li>
           </ul>
         </div>
       </div>
     </Modal.Body>
     <Modal.Footer>
-      <Button variant="secondary" onClick={close} title="Fechar ajuda">
+      <Button variant="dark" onClick={close} title="Fechar a ajuda">
         Fechar
       </Button>
     </Modal.Footer>

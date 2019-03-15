@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from 'moment';
 
 const getTime = (initialStringTime, timeInSeconds) => {
   return moment(initialStringTime, 'HH:mm:ss')
@@ -6,4 +6,8 @@ const getTime = (initialStringTime, timeInSeconds) => {
     .format('HH:mm:ss');
 };
 
-export default { getTime };
+const toLocalDateTime = dateTimeString => {
+  return moment(dateTimeString).format('DD/MM/YYYY HH:mm');
+};
+
+export default { getTime, toLocalDateTime };

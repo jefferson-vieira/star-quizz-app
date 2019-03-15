@@ -5,7 +5,7 @@ import PageHeader from '@/components/PageHeader';
 import GameTimer from './GameTimer';
 
 const GameHeader = ({ pauseTimer, stopGame }) => (
-  <section id="game-header" className="game-header container-fuid">
+  <section id="game-header" className="game-header">
     <PageHeader />
     <GameTimer pauseTimer={pauseTimer} stopGame={stopGame} />
   </section>

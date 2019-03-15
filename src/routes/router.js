@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Switch, Route } from 'react-router';
+import { Switch, Route, Redirect } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 
 import Home from '@/pages/Home';
@@ -10,14 +10,13 @@ import NotFound from '@/pages/NotFound';
 
 const Router = () => (
   <BrowserRouter>
-    <div className="container-fluid">
-      <Switch>
-        <Route exact path="/(|home)" component={Home} />
-        <Route exact path="/game" component={Game} />
-        <Route exact path="/rank" component={Rank} />
-        <Route component={NotFound} />
-      </Switch>
-    </div>
+    <Switch>
+      <Redirect exact from="/" to="/home" />
+      <Route exact path="/home" component={Home} />
+      <Route exact path="/game" component={Game} />
+      <Route exact path="/rank" component={Rank} />
+      <Route component={NotFound} />
+    </Switch>
   </BrowserRouter>
 );
 

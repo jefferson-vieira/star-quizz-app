@@ -5,48 +5,56 @@ import Help from '@/components/modals/Help';
 import GameCard from './GameCard';
 
 class GameBody extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      person: {},
-      showHelp: false
-    };
-  }
-
-  handleHelp = () => {
-    this.setState(prevState => ({ showHelp: !prevState.showHelp }));
+  state = {
+    currentCharacter: {},
+    shoulShowHelp: false
   };
 
-  showHelp = person => {
-    this.setState(prevState => ({ person, showHelp: !prevState.showHelp }));
+  handleHelp = () => {
+    this.setState(prevState => ({ shoulShowHelp: !prevState.shoulShowHelp }));
+  };
+
+  showHelp = character => {
+    this.setState(prevState => ({
+      currentCharacter: character,
+      shoulShowHelp: true
+    }));
+  };
+
+  validateAnswer = (id, character, answer, help) => {
+    const isCorrect = answer.toLowerCase() === character.name.toLowerCase();
+    if (isCorrect) this.props.validateAnswer(id, answer, help);
   };
 
   renderCards = () => {
-    const { people, validAnswer } = this.props;
-    const peopleList = people.results || [];
+    const { characters, answers } = this.props;
+    const charactersList = (characters && characters.results) || [];
 
-    return peopleList.map((person, index) => (
+    return charactersList.map((character, index) => (
       <GameCard
         key={index}
         id={index}
-        person={person}
-        showHelp={this.showHelp}
-        validAnswer={validAnswer}
+        character={character}
+        showHelp={() => this.showHelp(character)}
+        checkAnswer={(answer, help) =>
+          this.validateAnswer(index, character, answer, help)
+        }
+        answered={answers[index] && answers[index].answer}
+        isCorrect={!!answers[index]}
       />
     ));
   };
 
   render() {
-    const { person, showHelp } = this.state;
+    const { currentCharacter, shoulShowHelp } = this.state;
     const { endGame } = this.props;
 
     return (
-      <section id="game-body" className="game-body container-fluid my-3">
+      <section id="game-body" className="game-body my-3">
         {this.renderCards()}
         <Help
-          person={person}
-          show={showHelp && !endGame}
+          character={currentCharacter}
+          show={shoulShowHelp && !endGame}
           close={this.handleHelp}
         />
       </section>

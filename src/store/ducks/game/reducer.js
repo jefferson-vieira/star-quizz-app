@@ -1,22 +1,16 @@
 import types from './types';
 
 const INITIAL_STATE = {
-  loading: true,
-  error: false,
-  people: [],
-  score: 0
+  characters: [],
+  answers: []
 };
 
 const gameReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case types.PEOPLE_FETCHING:
-      return { ...state, loading: true, error: false };
-    case types.PEOPLE_FETCH_ERROR:
-      return { ...state, loading: false, error: true };
-    case types.PEOPLE_FETCHED:
-      return { ...state, loading: false, error: false, people: action.payload };
-    case types.VALIDATE_ANSWER:
-      return { ...state, score: action.payload };
+    case types.FETCH_CHARACTERS_SUCCESS:
+      return { ...state, characters: action.payload };
+    case types.SET_ANSWER:
+      return { ...state, answers: action.payload };
     default:
       return state;
   }

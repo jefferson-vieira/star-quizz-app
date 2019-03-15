@@ -1,16 +1,16 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
-
 import { Link } from 'react-router-dom';
 
-const EndGame = ({ show, refresh }) => (
-  <Modal id="modal-has-error" show={show} backdrop="static" centered>
+import { handleError } from '../../utils/error';
+
+const EndGame = ({ error, refresh }) => (
+  <Modal id="modal-has-error" show={!!error} backdrop="static" centered>
     <Modal.Header>
       <Modal.Title>Ops...</Modal.Title>
     </Modal.Header>
     <Modal.Body className="mx-3">
-      <p>Houve um erro ao carregar os dados dos personagens.</p>
-      <p>Tente novamente agora ou volte mais tarde.</p>
+      <p>{handleError(error)}</p>
     </Modal.Body>
     <Modal.Footer>
       <div className="col-6">
@@ -20,12 +20,12 @@ const EndGame = ({ show, refresh }) => (
       </div>
       <div className="col-6">
         <Button
-          variant="warning"
+          variant="primary"
           className="w-100"
           title="Recarregar"
           onClick={refresh}
         >
-          Tentar Novamente
+          Recarregar
         </Button>
       </div>
     </Modal.Footer>

@@ -1,13 +1,15 @@
 import { applyMiddleware, createStore, combineReducers } from 'redux';
-import promise from 'redux-promise';
-import thunk from 'redux-thunk';
 
 import game from './game';
+import status from './status';
+
+import middlewares from '../middlewares';
 
 const reducers = combineReducers({
-  game
+  game,
+  status
 });
 
-const store = applyMiddleware(promise, thunk)(createStore)(reducers);
+const store = applyMiddleware(...middlewares)(createStore)(reducers);
 
 export default store;

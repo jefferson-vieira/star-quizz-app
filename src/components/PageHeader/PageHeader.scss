@@ -1,6 +1,11 @@
 @import 'assets/scss/breakpoints';
 
-.header {
+.page-header {
+  @include media-breakpoint-down(sm) {
+    display: flex;
+    justify-content: center;
+  }
+
   &__logo {
     height: 150px;
 
@@ -11,7 +16,6 @@
   }
 
   &__title {
-    text-transform: uppercase;
     font-weight: bold;
 
     @include media-breakpoint-down(sm) {

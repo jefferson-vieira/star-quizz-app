@@ -5,13 +5,9 @@ import Logo from '@/components/Logo';
 import Rules from '@/components/modals/Rules';
 
 export default class Home extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      showRules: false
-    };
-  }
+  state = {
+    showRules: false
+  };
 
   handleRules = () => {
     this.setState(prevState => ({ showRules: !prevState.showRules }));
@@ -42,20 +38,20 @@ export default class Home extends Component {
               <br />
               Está seguro disso? Então vá em frente e nos mostre...
             </h3>
-            <div className="row justify-content-center">
+            <div>
               <Link
                 id="home-btn-rank"
                 to="/rank"
-                className="btn btn-outline-warning btn-lg w-25 m-3"
-                title="Rank"
+                className="btn btn-outline-light btn-lg m-3"
+                title="Mostrar pontuação"
               >
                 Rank
               </Link>
               <button
                 id="home-btn-play"
                 type="button"
-                className="btn btn-outline-warning btn-lg w-25 m-3"
-                title="Jogar"
+                className="btn btn-outline-primary btn-lg m-3"
+                title="Mostrar regras"
                 onClick={this.handleRules}
               >
                 Jogar
@@ -68,4 +64,3 @@ export default class Home extends Component {
     );
   }
 }
-

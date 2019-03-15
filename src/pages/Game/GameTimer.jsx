@@ -7,15 +7,11 @@ import { MAX_TIME_STRING, MAX_TIME_IN_SECONDS } from '@/configs';
 import timeUtils from '@/utils/time';
 
 class GameTimer extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      maxTimeString: MAX_TIME_STRING,
-      maxTime: MAX_TIME_IN_SECONDS,
-      time: MAX_TIME_IN_SECONDS
-    };
-  }
+  state = {
+    maxTimeString: MAX_TIME_STRING,
+    maxTime: MAX_TIME_IN_SECONDS,
+    time: MAX_TIME_IN_SECONDS
+  };
 
   componentDidMount() {
     this.startTimer();
@@ -50,25 +46,21 @@ class GameTimer extends Component {
 
     return (
       <div id="game-timer" className="game-header__timer m-3">
-        <div className="row align-items-center border border-warning rounded p-3 m-1">
-          <div className="col-12 text-center">
-            <p id="timer" className="text-border mb-0">
-              {timeUtils.getTime(maxTimeString, maxTime - time)}
-            </p>
-          </div>
+        <div className="row align-items-center justify-content-center border border-primary rounded p-3 m-1">
+          <p id="timer" className="text-border mb-0">
+            {timeUtils.getTime(maxTimeString, maxTime - time)}
+          </p>
           <div className="col-12 my-3">
             <Progress valuenow={this.getProgress()} />
           </div>
-          <div className="col-12 text-center">
-            <button
-              type="button"
-              className="btn btn-danger"
-              title="Desistir"
-              onClick={this.stopGame}
-            >
-              Desistir
-            </button>
-          </div>
+          <button
+            type="button"
+            className="btn btn-danger"
+            title="Desistir"
+            onClick={this.stopGame}
+          >
+            Desistir
+          </button>
         </div>
       </div>
     );

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Loading from '@/components/Loading';
 import Error from '@/components/modals/Error';
 import EndGame from '@/components/modals/EndGame';
 
@@ -11,28 +10,30 @@ import Body from './GameBody';
 import Footer from './GameFooter';
 
 import { operations } from '@/store/ducks/game';
+import playerService from '@/services/player';
 
 class Game extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      currentPage: 1,
-      user: { name: '', email: '' }
-    };
-  }
-
-  componentDidMount() {
-    this.props.getPeople();
-  }
-
-  getPeople = page => {
-    this.props.getPeople(page);
-    this.setState({ currentPage: page });
+  state = {
+    currentPage: 1,
+    player: { name: '', email: '' }
   };
 
-  validAnswer = usesHelp => {
-    this.props.validateAnswer(usesHelp);
+  componentDidMount() {
+    this.fetchCharacters();
+  }
+
+  fetchCharacters = (page = 1) => {
+
+    const pageToLoad = page || this.state.currentPage;
+    console.log(page, pageToLoad)
+
+    const { characters, fetchCharacters } = this.props;
+
+    if (!characters[pageToLoad]) {
+      fetchCharacters(pageToLoad);
+    }
+
+    this.setState({ currentPage: pageToLoad });
   };
 
   stopGame = remainingTime => {
@@ -40,93 +41,94 @@ class Game extends Component {
   };
 
   handleInputChange = event => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
+    const name = event.target.name;
+    const value = event.target.value;
 
     this.setState(prevState => ({
-      user: { ...prevState.user, [name]: value }
+      player: { ...prevState.player, [name]: value }
     }));
   };
 
-  saveUser = event => {
+  savePlayer = event => {
     const form = event.currentTarget;
 
     event.preventDefault();
 
     if (form.checkValidity()) {
       const { score } = this.props;
-      const { name, email } = this.state.user;
+      const { name, email } = this.state.player;
 
-      const storage = JSON.parse(localStorage.getItem('scores')) || [];
-      storage.push({
-        name,
-        email,
-        score
-      });
-      localStorage.setItem('scores', JSON.stringify(storage));
+      playerService.savePlayer({ name, email, score, date: new Date() });
 
-      this.setState({ savedScore: true });
+      this.setState({ saved: true });
     }
     this.setState({ validated: true });
   };
 
   render() {
-    const { loading, error, people, score } = this.props;
+    const {
+      loading,
+      error,
+      characters,
+      answers,
+      validateAnswer,
+      score
+    } = this.props;
     const {
       currentPage,
       endGame,
       remainingTime,
-      user,
+      player,
       validated,
-      savedScore
+      saved
     } = this.state;
 
+    const currentCharacters = characters[currentPage] || [];
+    const currentAnswers = answers[currentPage] || [];
+
     return (
-      <section id="game" className="container-fluid">
-        <Loading show={loading} />
-        <Error show={error} refresh={() => this.getPeople(currentPage)} />
-        <Header pauseTimer={loading || error} stopGame={this.stopGame} />
-        <Body people={people} validAnswer={this.validAnswer} endGame={endGame} />
+      <section id="game" className="game">
+        <Header pauseTimer={error || loading} stopGame={this.stopGame} />
+        <Body
+          characters={currentCharacters}
+          answers={currentAnswers}
+          validateAnswer={(...attrs) => validateAnswer(currentPage, ...attrs)}
+          endGame={endGame}
+        />
         <Footer
-          totalItems={people.count}
+          totalItems={currentCharacters.count}
           currentPage={currentPage}
-          next={!!people.next}
-          previous={!!people.previous}
-          getPeople={this.getPeople}
+          next={!!currentCharacters.next}
+          previous={!!currentCharacters.previous}
+          fetchCharacters={this.fetchCharacters}
         />
         <EndGame
           show={endGame}
           score={score}
           time={remainingTime}
           inputChange={this.handleInputChange}
-          user={user}
-          saveUser={this.saveUser}
+          player={player}
+          savePlayer={this.savePlayer}
           validated={validated}
-          savedScore={savedScore}
+          saved={saved}
         />
+        <Error error={error} refresh={this.fetchCharacters} />
       </section>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  loading: state.game.loading,
-  error: state.game.error,
-  people: state.game.people,
-  score: state.game.score
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      getPeople: operations.getPeople,
-      validateAnswer: operations.validateAnswer
-    },
-    dispatch
-  );
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  ({ status, game }) => ({
+    ...status,
+    ...game,
+    score:
+      game.answers.length &&
+      game.answers
+        .filter(v => v)
+        .reduce((page, nextPage) => page.concat(nextPage))
+        .filter(v => v)
+        .reduce((score, nextAnswer) => score + nextAnswer.score, 0)
+  }),
+  dispatch => bindActionCreators(operations, dispatch)
 )(Game);

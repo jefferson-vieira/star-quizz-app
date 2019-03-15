@@ -5,55 +5,58 @@ import gcseService from '@/services/gcse';
 
 import { ANSWER_POINTS, ANSWER_POINTS_WITH_HELP } from '@/configs';
 
-const getName = data => data.map(d => d.data.name);
+const getName = resp => resp.map(r => r.data.name);
 
-/**
- * Needs refactor?
- */
-const getPeople = page => async dispatch => {
-  dispatch(actions.isLoading());
-
+const fetchCharacters = page => async (dispatch, getState) => {
   try {
-    const { data } = await swapiService.getPeople(page);
+    dispatch(actions.fetchCharactersRequest());
+
+    const { data } = await swapiService.getCharacters(page);
 
     await Promise.all(
       data.results
-        .map(person => [
-          gcseService.getImage(person.name).then(data => {
-            person.imgurl = data.data.items.shift().link;
+        .map(character => [
+          gcseService.getImage(character.name).then(resp => {
+            character.imgsrc = resp.data.items.shift().link;
           }),
-          swapiService.getPersonData([person.homeworld]).then(data => {
-            person.homeworld = getName(data);
+          swapiService.getCharacterData([character.homeworld]).then(resp => {
+            character.homeworld = getName(resp);
           }),
-          swapiService.getPersonData(person.species).then(data => {
-            person.species = getName(data);
+          swapiService.getCharacterData(character.species).then(resp => {
+            character.species = getName(resp);
           }),
-          swapiService.getPersonData(person.starships).then(data => {
-            person.starships = getName(data).join(', ');
+          swapiService.getCharacterData(character.starships).then(resp => {
+            character.starships = getName(resp).join(', ');
           }),
-          swapiService.getPersonData(person.vehicles).then(data => {
-            person.vehicles = getName(data).join(', ');
+          swapiService.getCharacterData(character.vehicles).then(resp => {
+            character.vehicles = getName(resp).join(', ');
           })
         ])
         .reduce((a, b) => a.concat(b))
     );
 
-    dispatch(actions.getPeople(data));
+    const characters = [...getState().game.characters];
+    characters[page] = data;
+
+    dispatch(actions.fetchCharactersSuccess(characters));
   } catch (error) {
-    dispatch(actions.hasError());
+    dispatch(actions.fetchCharactersFailure(error));
   }
 };
 
-const validateAnswer = usesHelp => (dispatch, getState) => {
-  const newScore =
-    getState().game.score +
-    (usesHelp ? ANSWER_POINTS_WITH_HELP : ANSWER_POINTS);
+const validateAnswer = (page, id, answer, help) => (dispatch, getState) => {
+  const answers = [...getState().game.answers];
+  const pageAnswers = answers[page] || [];
+  pageAnswers[id] = {
+    answer,
+    score: help ? ANSWER_POINTS_WITH_HELP : ANSWER_POINTS
+  };
+  answers[page] = pageAnswers;
 
-  dispatch(actions.validateAnswer(newScore));
+  dispatch(actions.setAnswer(answers));
 };
 
 export default {
-  ...actions,
-  getPeople,
+  fetchCharacters,
   validateAnswer
 };

@@ -1,7 +1,19 @@
 @import 'assets/scss/variables';
 
-.rank-list {
-  &__message {
-    color: $white;
+.rank {
+  h1 {
+    color: $primary;
+    font-weight: bold;
+    font-size: 3.5rem;
+  }
+
+  &-list {
+    &__message,
+    &--text-white {
+      &,
+      &:hover {
+        color: $white;
+      }
+    }
   }
 }

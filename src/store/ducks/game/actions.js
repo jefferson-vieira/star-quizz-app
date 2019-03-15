@@ -1,26 +1,27 @@
 import types from './types';
 
-const isLoading = () => ({
-  type: types.PEOPLE_FETCHING
+const fetchCharactersRequest = () => ({
+  type: types.FETCH_CHARACTERS_REQUEST
 });
 
-const hasError = () => ({
-  type: types.PEOPLE_FETCH_ERROR
-});
-
-const getPeople = data => ({
-  type: types.PEOPLE_FETCHED,
+const fetchCharactersSuccess = data => ({
+  type: types.FETCH_CHARACTERS_SUCCESS,
   payload: data
 });
 
-const validateAnswer = newScore => ({
-  type: types.VALIDATE_ANSWER,
-  payload: newScore
+const fetchCharactersFailure = error => ({
+  type: types.FETCH_CHARACTERS_FAILURE,
+  payload: error
+});
+
+const setAnswer = answer => ({
+  type: types.SET_ANSWER,
+  payload: answer
 });
 
 export default {
-  isLoading,
-  hasError,
-  getPeople,
-  validateAnswer
+  fetchCharactersRequest,
+  fetchCharactersSuccess,
+  fetchCharactersFailure,
+  setAnswer
 };
