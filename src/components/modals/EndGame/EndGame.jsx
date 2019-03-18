@@ -14,7 +14,8 @@ const EndGame = ({
   player,
   savePlayer,
   validated,
-  saved
+  saved,
+  reset
 }) => (
   <Modal id="modal-end-game" show={show} backdrop="static" centered>
     <Modal.Header>
@@ -35,7 +36,12 @@ const EndGame = ({
     </Modal.Body>
     <Modal.Footer>
       <div className="col-6">
-        <Link to="/home" className="btn btn-danger w-100" title="Sair">
+        <Link
+          to="/home"
+          onClick={reset}
+          className="btn btn-danger w-100"
+          title="Sair"
+        >
           Sair
         </Link>
       </div>

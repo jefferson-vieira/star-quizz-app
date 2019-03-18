@@ -11,6 +11,8 @@ const gameReducer = (state = INITIAL_STATE, action) => {
       return { ...state, characters: action.payload };
     case types.SET_ANSWER:
       return { ...state, answers: action.payload };
+    case types.RESET:
+      return { ...state, answers: INITIAL_STATE.answers };
     default:
       return state;
   }

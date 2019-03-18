@@ -19,12 +19,12 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <Link
-        className="btn btn-outline-warning btn-lg"
+        className="btn btn-outline-primary btn-lg mb-3"
         replace={false}
-        title="Home"
+        title="Voltar ao início"
         to="/home"
       >
-        Home
+        Início
       </Link>,
       "className": "row justify-content-center",
     },
@@ -34,14 +34,14 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": "Home",
-        "className": "btn btn-outline-warning btn-lg",
+        "children": "Início",
+        "className": "btn btn-outline-primary btn-lg mb-3",
         "replace": false,
-        "title": "Home",
+        "title": "Voltar ao início",
         "to": "/home",
       },
       "ref": null,
-      "rendered": "Home",
+      "rendered": "Início",
       "type": [Function],
     },
     "type": "div",
@@ -53,12 +53,12 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <Link
-          className="btn btn-outline-warning btn-lg"
+          className="btn btn-outline-primary btn-lg mb-3"
           replace={false}
-          title="Home"
+          title="Voltar ao início"
           to="/home"
         >
-          Home
+          Início
         </Link>,
         "className": "row justify-content-center",
       },
@@ -68,14 +68,14 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": "Home",
-          "className": "btn btn-outline-warning btn-lg",
+          "children": "Início",
+          "className": "btn btn-outline-primary btn-lg mb-3",
           "replace": false,
-          "title": "Home",
+          "title": "Voltar ao início",
           "to": "/home",
         },
         "ref": null,
-        "rendered": "Home",
+        "rendered": "Início",
         "type": [Function],
       },
       "type": "div",

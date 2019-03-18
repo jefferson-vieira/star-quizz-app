@@ -19,11 +19,11 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Header />,
+        <PageHeader />,
         <section
           className="container my-5"
         >
-          <PageHeader
+          <Header
             title="Ops..."
           />
           <div
@@ -59,7 +59,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <PageHeader
+            <Header
               title="Ops..."
             />,
             <div
@@ -153,11 +153,11 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Header />,
+          <PageHeader />,
           <section
             className="container my-5"
           >
-            <PageHeader
+            <Header
               title="Ops..."
             />
             <div
@@ -193,7 +193,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <PageHeader
+              <Header
                 title="Ops..."
               />,
               <div

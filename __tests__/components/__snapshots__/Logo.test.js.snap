@@ -24,7 +24,6 @@ ShallowWrapper {
         id="logo-img"
         src="logo.png"
       />,
-      "className": "col-12 col-sm-10 col-md-6",
       "id": "logo",
     },
     "ref": null,
@@ -56,7 +55,6 @@ ShallowWrapper {
           id="logo-img"
           src="logo.png"
         />,
-        "className": "col-12 col-sm-10 col-md-6",
         "id": "logo",
       },
       "ref": null,

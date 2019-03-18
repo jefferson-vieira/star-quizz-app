@@ -61,23 +61,21 @@ ShallowWrapper {
               <br />
               Está seguro disso? Então vá em frente e nos mostre...
             </h3>
-            <div
-              className="row justify-content-center"
-            >
+            <div>
               <Link
-                className="btn btn-outline-warning btn-lg w-25 m-3"
+                className="btn btn-outline-light btn-lg m-3"
                 id="home-btn-rank"
                 replace={false}
-                title="Rank"
+                title="Mostrar pontuação"
                 to="/rank"
               >
                 Rank
               </Link>
               <button
-                className="btn btn-outline-warning btn-lg w-25 m-3"
+                className="btn btn-outline-primary btn-lg m-3"
                 id="home-btn-play"
                 onClick={[Function]}
-                title="Jogar"
+                title="Mostrar regras"
                 type="button"
               >
                 Jogar
@@ -140,23 +138,21 @@ ShallowWrapper {
                 <br />
                 Está seguro disso? Então vá em frente e nos mostre...
               </h3>
-              <div
-                className="row justify-content-center"
-              >
+              <div>
                 <Link
-                  className="btn btn-outline-warning btn-lg w-25 m-3"
+                  className="btn btn-outline-light btn-lg m-3"
                   id="home-btn-rank"
                   replace={false}
-                  title="Rank"
+                  title="Mostrar pontuação"
                   to="/rank"
                 >
                   Rank
                 </Link>
                 <button
-                  className="btn btn-outline-warning btn-lg w-25 m-3"
+                  className="btn btn-outline-primary btn-lg m-3"
                   id="home-btn-play"
                   onClick={[Function]}
-                  title="Jogar"
+                  title="Mostrar regras"
                   type="button"
                 >
                   Jogar
@@ -234,23 +230,21 @@ ShallowWrapper {
                   <br />
                   Está seguro disso? Então vá em frente e nos mostre...
                 </h3>,
-                <div
-                  className="row justify-content-center"
-                >
+                <div>
                   <Link
-                    className="btn btn-outline-warning btn-lg w-25 m-3"
+                    className="btn btn-outline-light btn-lg m-3"
                     id="home-btn-rank"
                     replace={false}
-                    title="Rank"
+                    title="Mostrar pontuação"
                     to="/rank"
                   >
                     Rank
                   </Link>
                   <button
-                    className="btn btn-outline-warning btn-lg w-25 m-3"
+                    className="btn btn-outline-primary btn-lg m-3"
                     id="home-btn-play"
                     onClick={[Function]}
-                    title="Jogar"
+                    title="Mostrar regras"
                     type="button"
                   >
                     Jogar
@@ -370,25 +364,24 @@ ShallowWrapper {
                 "props": Object {
                   "children": Array [
                     <Link
-                      className="btn btn-outline-warning btn-lg w-25 m-3"
+                      className="btn btn-outline-light btn-lg m-3"
                       id="home-btn-rank"
                       replace={false}
-                      title="Rank"
+                      title="Mostrar pontuação"
                       to="/rank"
                     >
                       Rank
                     </Link>,
                     <button
-                      className="btn btn-outline-warning btn-lg w-25 m-3"
+                      className="btn btn-outline-primary btn-lg m-3"
                       id="home-btn-play"
                       onClick={[Function]}
-                      title="Jogar"
+                      title="Mostrar regras"
                       type="button"
                     >
                       Jogar
                     </button>,
                   ],
-                  "className": "row justify-content-center",
                 },
                 "ref": null,
                 "rendered": Array [
@@ -398,10 +391,10 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "children": "Rank",
-                      "className": "btn btn-outline-warning btn-lg w-25 m-3",
+                      "className": "btn btn-outline-light btn-lg m-3",
                       "id": "home-btn-rank",
                       "replace": false,
-                      "title": "Rank",
+                      "title": "Mostrar pontuação",
                       "to": "/rank",
                     },
                     "ref": null,
@@ -414,10 +407,10 @@ ShallowWrapper {
                     "nodeType": "host",
                     "props": Object {
                       "children": "Jogar",
-                      "className": "btn btn-outline-warning btn-lg w-25 m-3",
+                      "className": "btn btn-outline-primary btn-lg m-3",
                       "id": "home-btn-play",
                       "onClick": [Function],
-                      "title": "Jogar",
+                      "title": "Mostrar regras",
                       "type": "button",
                     },
                     "ref": null,
@@ -497,23 +490,21 @@ ShallowWrapper {
                 <br />
                 Está seguro disso? Então vá em frente e nos mostre...
               </h3>
-              <div
-                className="row justify-content-center"
-              >
+              <div>
                 <Link
-                  className="btn btn-outline-warning btn-lg w-25 m-3"
+                  className="btn btn-outline-light btn-lg m-3"
                   id="home-btn-rank"
                   replace={false}
-                  title="Rank"
+                  title="Mostrar pontuação"
                   to="/rank"
                 >
                   Rank
                 </Link>
                 <button
-                  className="btn btn-outline-warning btn-lg w-25 m-3"
+                  className="btn btn-outline-primary btn-lg m-3"
                   id="home-btn-play"
                   onClick={[Function]}
-                  title="Jogar"
+                  title="Mostrar regras"
                   type="button"
                 >
                   Jogar
@@ -576,23 +567,21 @@ ShallowWrapper {
                   <br />
                   Está seguro disso? Então vá em frente e nos mostre...
                 </h3>
-                <div
-                  className="row justify-content-center"
-                >
+                <div>
                   <Link
-                    className="btn btn-outline-warning btn-lg w-25 m-3"
+                    className="btn btn-outline-light btn-lg m-3"
                     id="home-btn-rank"
                     replace={false}
-                    title="Rank"
+                    title="Mostrar pontuação"
                     to="/rank"
                   >
                     Rank
                   </Link>
                   <button
-                    className="btn btn-outline-warning btn-lg w-25 m-3"
+                    className="btn btn-outline-primary btn-lg m-3"
                     id="home-btn-play"
                     onClick={[Function]}
-                    title="Jogar"
+                    title="Mostrar regras"
                     type="button"
                   >
                     Jogar
@@ -670,23 +659,21 @@ ShallowWrapper {
                     <br />
                     Está seguro disso? Então vá em frente e nos mostre...
                   </h3>,
-                  <div
-                    className="row justify-content-center"
-                  >
+                  <div>
                     <Link
-                      className="btn btn-outline-warning btn-lg w-25 m-3"
+                      className="btn btn-outline-light btn-lg m-3"
                       id="home-btn-rank"
                       replace={false}
-                      title="Rank"
+                      title="Mostrar pontuação"
                       to="/rank"
                     >
                       Rank
                     </Link>
                     <button
-                      className="btn btn-outline-warning btn-lg w-25 m-3"
+                      className="btn btn-outline-primary btn-lg m-3"
                       id="home-btn-play"
                       onClick={[Function]}
-                      title="Jogar"
+                      title="Mostrar regras"
                       type="button"
                     >
                       Jogar
@@ -806,25 +793,24 @@ ShallowWrapper {
                   "props": Object {
                     "children": Array [
                       <Link
-                        className="btn btn-outline-warning btn-lg w-25 m-3"
+                        className="btn btn-outline-light btn-lg m-3"
                         id="home-btn-rank"
                         replace={false}
-                        title="Rank"
+                        title="Mostrar pontuação"
                         to="/rank"
                       >
                         Rank
                       </Link>,
                       <button
-                        className="btn btn-outline-warning btn-lg w-25 m-3"
+                        className="btn btn-outline-primary btn-lg m-3"
                         id="home-btn-play"
                         onClick={[Function]}
-                        title="Jogar"
+                        title="Mostrar regras"
                         type="button"
                       >
                         Jogar
                       </button>,
                     ],
-                    "className": "row justify-content-center",
                   },
                   "ref": null,
                   "rendered": Array [
@@ -834,10 +820,10 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "children": "Rank",
-                        "className": "btn btn-outline-warning btn-lg w-25 m-3",
+                        "className": "btn btn-outline-light btn-lg m-3",
                         "id": "home-btn-rank",
                         "replace": false,
-                        "title": "Rank",
+                        "title": "Mostrar pontuação",
                         "to": "/rank",
                       },
                       "ref": null,
@@ -850,10 +836,10 @@ ShallowWrapper {
                       "nodeType": "host",
                       "props": Object {
                         "children": "Jogar",
-                        "className": "btn btn-outline-warning btn-lg w-25 m-3",
+                        "className": "btn btn-outline-primary btn-lg m-3",
                         "id": "home-btn-play",
                         "onClick": [Function],
-                        "title": "Jogar",
+                        "title": "Mostrar regras",
                         "type": "button",
                       },
                       "ref": null,

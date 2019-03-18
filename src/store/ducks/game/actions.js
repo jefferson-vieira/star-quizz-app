@@ -19,9 +19,14 @@ const setAnswer = answer => ({
   payload: answer
 });
 
+const reset = () => ({
+  type: types.RESET
+});
+
 export default {
   fetchCharactersRequest,
   fetchCharactersSuccess,
   fetchCharactersFailure,
-  setAnswer
+  setAnswer,
+  reset
 };

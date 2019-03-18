@@ -1,13 +1,17 @@
 @import 'assets/scss/breakpoints';
 
 .page-header {
-  @include media-breakpoint-down(sm) {
-    display: flex;
-    justify-content: center;
-  }
+  margin: 0;
 
   &__logo {
     height: 150px;
+
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-down(sm) {
+      justify-content: center;
+    }
 
     & img {
       max-height: 100%;

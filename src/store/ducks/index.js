@@ -10,6 +10,14 @@ const reducers = combineReducers({
   status
 });
 
-const store = applyMiddleware(...middlewares)(createStore)(reducers);
+const reduxDevTools =
+  process.env.NODE_ENV !== 'production' &&
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+  window.__REDUX_DEVTOOLS_EXTENSION__();
+
+const store = applyMiddleware(...middlewares)(createStore)(
+  reducers,
+  reduxDevTools
+);
 
 export default store;

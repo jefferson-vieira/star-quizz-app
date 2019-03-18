@@ -23,10 +23,7 @@ class Game extends Component {
   }
 
   fetchCharacters = (page = 1) => {
-
     const pageToLoad = page || this.state.currentPage;
-    console.log(page, pageToLoad)
-
     const { characters, fetchCharacters } = this.props;
 
     if (!characters[pageToLoad]) {
@@ -63,6 +60,10 @@ class Game extends Component {
       this.setState({ saved: true });
     }
     this.setState({ validated: true });
+  };
+
+  reset = () => {
+    this.props.reset();
   };
 
   render() {
@@ -111,6 +112,7 @@ class Game extends Component {
           savePlayer={this.savePlayer}
           validated={validated}
           saved={saved}
+          reset={this.reset}
         />
         <Error error={error} refresh={this.fetchCharacters} />
       </section>

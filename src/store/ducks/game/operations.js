@@ -57,6 +57,7 @@ const validateAnswer = (page, id, answer, help) => (dispatch, getState) => {
 };
 
 export default {
+  ...actions,
   fetchCharacters,
   validateAnswer
 };

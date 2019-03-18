@@ -21,7 +21,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <PageHeader
+        <Header
           title="Rank"
         />,
         <div
@@ -103,7 +103,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <PageHeader
+          <Header
             title="Rank"
           />,
           <div

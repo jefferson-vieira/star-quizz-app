@@ -21,7 +21,7 @@ ShallowWrapper {
       "children": <div
         aria-valuemax="100"
         aria-valuemin="0"
-        className="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+        className="progress-bar progress-bar-striped progress-bar-animated bg-primary"
         role="progressbar"
         style={
           Object {
@@ -40,7 +40,7 @@ ShallowWrapper {
         "aria-valuemax": "100",
         "aria-valuemin": "0",
         "aria-valuenow": undefined,
-        "className": "progress-bar progress-bar-striped progress-bar-animated bg-warning",
+        "className": "progress-bar progress-bar-striped progress-bar-animated bg-primary",
         "role": "progressbar",
         "style": Object {
           "width": "undefined%",
@@ -61,7 +61,7 @@ ShallowWrapper {
         "children": <div
           aria-valuemax="100"
           aria-valuemin="0"
-          className="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+          className="progress-bar progress-bar-striped progress-bar-animated bg-primary"
           role="progressbar"
           style={
             Object {
@@ -80,7 +80,7 @@ ShallowWrapper {
           "aria-valuemax": "100",
           "aria-valuemin": "0",
           "aria-valuenow": undefined,
-          "className": "progress-bar progress-bar-striped progress-bar-animated bg-warning",
+          "className": "progress-bar progress-bar-striped progress-bar-animated bg-primary",
           "role": "progressbar",
           "style": Object {
             "width": "undefined%",

@@ -20,8 +20,10 @@ const PaginatorItem = ({
       href={href}
       role="button"
       className="page-link"
-      title={`Ir para a página ${page}`}
-      onClick={() => changePage(page)}
+      title={
+        isActive ? `Você está na página ${page}` : `Ir para a página ${page}`
+      }
+      onClick={() => !isActive && changePage(page)}
     >
       <span aria-hidden="true">{text || page}</span>
       <span className="sr-only">{message || page}</span>
